@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newbie-DS&ML Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #000000;
+            color: #ecf0f1;
+            font-family: 'Arial', sans-serif; 
+        }
+        .navbar {
+            background-color: #000000;
+            max-height: 35px;
+        }
+        .navbar-brand, .nav-link {
+            color: #ecf0f1 !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #e74c3c !important;
+        }
+        .intro-section, .summary-section, .services-section, .portfolio-section, .resume-section, .blog-section, .contact-section {
+            padding: 60px 0;
+        }
+        .intro-image, .summary-image {
+            color: #8803d4a1;
+        }
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 2rem;
+        }
+        .row-data,.image-wrapper {
+            flex: 1 1 45%;
+        }
+        .btn-custom {
+            background-color: #8803d4a1;
+            color: #fff;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #c0392b;
+            color: #fff;
+        }
+        #home {
+            background-image: url('../static/bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .card {
+            background-color: #34495e;
+            border: none;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .portfolio-card {
+            background-color: #e74c3c;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .resume-box, .contact-info {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #2c3e50;
+            padding: 20px 0;
+            text-align: center;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Shubham | Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="home" class="intro-section">
+        <div class="container text-center">
+            <div class="flex-row" style="padding-left: 200px;">
+                <div class="row-data" style="color: rgb(249, 247, 245); background-color: #3c3b3d75; border-radius: 25px; padding-top: 40px; padding-bottom: 40px;">
+                    <h1>Hello!</h1>
+                    <h2>I am Shubham</h2>
+                    <p>I'm a 3rd year student of Data science & ML (B.Tech). Let's create something amazing!</p>
+                    <a href="#contact" class="btn btn-custom">Contact Me</a>
+                </div>
+                <div class="image-wrapper">
+                    <div class="row">
+                        <div class="col">
+                            <img src="../static/Animation - 1746031845547.gif" alt="Ghibli" class="intro-image" height="150" style="padding-left: 145px;">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="summary-section">
+        <div class="container text-center">
+            <h2>I am Data Science & Machine Learning student.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="row mt-5" style="background-color: #34495e00; border-radius: 20px; padding-left: 250px;">
+                <div class="col-md-4" style="max-height:300px; max-width: 300px; background:#4101a890; border-radius: 25px; aspect-ratio: 3/3; align-content: center;">
+                    <img src="../static/Shubham.jpg" alt="Portrait" class="summary-image" width="295px" style="aspect-ratio: 4/4; align-self: center; border-radius: 20px;">
+                </div>
+                <div class="col-md-8">
+                    <p> </p>
+                    <p><strong>Age:</strong> 21 (as of 2025)</p>
+                    <p><strong>Location:</strong> Jalandhar, India</p>
+                    <p><strong>Address:</strong> Kapurthala, Jalandhar</p>
+                    <p><strong>Email:</strong> shubham30p@gmail.com</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/shubham1028" style="color: white;">@shubham1028</a></p>
+                    <a href="github.com/shubhamp1028/Shubham-Pandey/" class="btn btn-custom">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container text-center">
+            <h2 class="text-center" style="color: #ad2ff6f3;">My Certificates</h2>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../static/1.png" alt=Prediction" class="mb-3">
+                        <h5>Data science and ML</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../static/3.png" alt="Development" class="mb-3">
+                        <h5>Database Management System</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="../static/2.png" alt="ML" class="mb-3">
+                        <h5>DevOps</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4 mt-4">
+                    <div class="card">
+                        <img src="../static/gdc.jpg" alt="NLP" class="mb-3">
+                        <h5>NLP</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card">
+                        <img src="" alt="Deep Learning" class="mb-3">
+                        <h5>Deep Learning</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="card">
+                        <img src="../static/about.gif" alt="Support" class="mb-3">
+                        <h5>Support</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container text-center">
+            <h2 class="text-center" style="color: #ad2ff6f3;">My Projects</h2>
+            <div class="btn-group mb-4">
+                <button type="button" class="btn btn-outline-light">All</button>
+                <button type="button" class="btn btn-outline-light">Data Science</button>
+                <button type="button" class="btn btn-outline-light">Machine Learning</button>
+                <button type="button" class="btn btn-outline-light">Deep Learning</button>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="portfolio-card">
+                      <img src="../static/gdc.jpg" alt="ML" width="300px">
+                      <p> Project 1</p></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-card">
+                      <img src="../static/gpp.jpg" alt="ML" width="300px">
+                      <p> Project 2</p></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-card">
+                      <img src="../static/widget.png" alt="ML" width="300px">
+                      <p> Project 3</p></div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="portfolio-card">
+                      <img src="../static/exo.jpg" alt="ML" width="300px">
+                      <p> Project 4</p></div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="portfolio-card">
+                      <img src="../static/2.png" alt="ML" width="300px">
+                      <p> Project 5</p></div>
+                </div>
+                <div class="col-md-4 mt-4">
+                    <div class="portfolio-card">
+                      <img src="../static/2.png" alt="ML" width="300px">
+                      <p> Project 6</p></div>
+                </div>
+            </div>
+            <!-- <div class="row mt-5 text-center">
+                <div class="col">
+                    <div class="card bg-transparent border-0">
+                        <h4>2020+</h4>
+                        <p>Successful Projects</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-transparent border-0">
+                        <h4>350k</h4>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-transparent border-0">
+                        <h4>500+</h4>
+                        <p>Team Members</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-transparent border-0">
+                        <h4>100+</h4>
+                        <p>Winning Awards</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section">
+        <div class="container text-center">
+            <h2 class="text-center" style="color: #ad2ff6f3;">My Resume</h2>
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="resume-box">
+                        <h4>Education</h4>
+                        <ul class="list-unstyled">
+                            <li><strong>Computer Science</strong> - 2022-2026</li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            <li><strong>Associate's Degree</strong> - 2019-2021</li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="resume-box">
+                        <h4>Experience</h4>
+                        <ul class="list-unstyled">
+                            <li><strong>Data analyst</strong> - Jan - Mar 2025</li>
+                            <li>Remote.</li>
+                            <li>Modified Data and assisted in analysing and visualiseing using Python and Tableau</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <img src="../static/quote.png" alt="Quote Icon" class="mb-3" height="250">
+                <p>"A person is what their faith (belief) is. As a man's belief is, so is he."</p>
+                <p><strong>Bhagwat Gita</strong> - Chapter 17, Verse 3</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container text-center">
+            <h2 class="text-center" style="color: #ad2ff6f3;">My Blog</h2>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white">
+                        <img src="../static/medium.png" alt="Blog Post 1" class="card-img-top" height="250">
+                        <div class="card-body">
+                            <h5 class="card-title">Perception Vs Perspective</h5>
+                            <p class="card-text">Medium.com</p>
+                            <a href="https://medium.com/@shubham1028/perception-vs-perspective-a-multidisciplinary-exploration-865a97f054b8" class="btn btn-custom">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white">
+                        <img src="../static/blog1.png" alt="Blog Post 2" class="card-img-top" height="250">
+                        <div class="card-body">
+                            <h5 class="card-title">Life and Aataman</h5>
+                            <p class="card-text">Blogger</p>
+                            <a href="https://newbieshubham.blogspot.com/2023/02/what-life-and-aatman-actually-are.html" class="btn btn-custom">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white">
+                        <img src="../static/universe.png" alt="Blog Post 3" class="card-img-top" height="250">
+                        <div class="card-body">
+                            <h5 class="card-title">Universe itself Death of something</h5>
+                            <p class="card-text">Blogger</p>
+                            <a href="https://newbieshubham.blogspot.com/2023/02/what-if-universe-is-itself-death-of.html" class="btn btn-custom">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container text-center">
+            <h2 class="text-center" style="color: #ad2ff6f3;">Contact Us</h2>
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <p><strong>Contact Address</strong></p>
+                        <p><img src="../static/loc.png" alt="Location" height="25"> Varanasi, Uttar Pradesh</p>
+                        <p><img src="../static/mail.png" alt="Email" height="25"> shubham30p@gmail.com</p>
+                        <p><img src="../static/phone.png" alt="Phone" height="25"> +91-8756169800</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2025 Shubham All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
