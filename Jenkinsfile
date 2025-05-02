@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clone GitHub Repo') {
             steps {
-                withCredentials([string(credentialsId: "${GITHUB_CREDENTIALS_ID}", variable: 'GITHUB_PAT')]) {
+                withCredentials([string(credentialsId: "${GITHUB}", variable: 'GITHUB_PAT')]) {
                     sh """
                         git clone https://ShubhamP1028:${GITHUB_PAT}@github.com/ShubhamP1028/Portfoliio.git
                     """
@@ -33,7 +33,7 @@ pipeline {
 
         stage('Login to Docker Hub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                withCredentials([usernamePassword(credentialsId: "${dockerhub-creds}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin"
                 }
             }
