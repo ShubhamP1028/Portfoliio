@@ -5,7 +5,7 @@ pipeline {
         IMAGE_NAME = "newbieshubham/shubham-resume"
         IMAGE_TAG = "latest"
         DOCKER_CREDENTIALS_ID = "dockerhub-creds"
-        GITHUB_CREDENTIALS_ID = "Github"  // Corrected GitHub PAT credential ID from your Jenkins
+        //GITHUB_CREDENTIALS_ID = "Github"  // Corrected GitHub PAT credential ID from your Jenkins
     }
 
     stages {
