@@ -5,7 +5,7 @@ pipeline {
         IMAGE_NAME = "newbieshubham/shubham-resume"
         IMAGE_TAG = "latest"
         DOCKER_CREDENTIALS_ID = "dockerhub-creds"
-        GITHUB_CREDENTIALS_ID = "github-pat"  // Your Jenkins GitHub PAT credential ID
+        GITHUB_CREDENTIALS_ID = "Github"  // Corrected GitHub PAT credential ID from your Jenkins
     }
 
     stages {
@@ -13,8 +13,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: "${GITHUB_CREDENTIALS_ID}", variable: 'GITHUB_PAT')]) {
                     sh """
-                        git config --global credential.helper store
-                        git clone https://$GITHUB_USER:$GITHUB_PAT@github.com/ShubhamP1028/Portfoliio.git
+                        git clone https://ShubhamP1028:${GITHUB_PAT}@github.com/ShubhamP1028/Portfoliio.git
                     """
                 }
             }
@@ -49,10 +48,10 @@ pipeline {
 
     post {
         success {
-            echo 'Docker image successfully pushed to Docker Hub!'
+            echo '✅ Docker image successfully pushed to Docker Hub!'
         }
         failure {
-            echo 'Build failed. Please check the logs.'
+            echo '❌ Build failed. Please check the logs.'
         }
     }
 }
