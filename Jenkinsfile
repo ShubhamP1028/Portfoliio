@@ -2,53 +2,43 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "newbieshubham/shubham-resume"
-        IMAGE_TAG = "latest"
-        DOCKER_CREDENTIALS_ID = "dockerhub-creds"
-        //GITHUB_CREDENTIALS_ID = "Github"  // Corrected GitHub PAT credential ID from your Jenkins
+        DOCKER_CREDENTIALS = credentials('dockerhub') // Replace 'dockerhub' with your actual Jenkins credential ID for Docker Hub
+        IMAGE_NAME = 'shubhamp1028/portfolio'         // Replace with your Docker Hub repo name
     }
 
     stages {
         stage('Clone GitHub Repo') {
             steps {
-                withCredentials([string(credentialsId: "${GITHUB}", variable: 'GITHUB_PAT')]) {
-                    sh """
-                        git clone https://ShubhamP1028:${GITHUB_PAT}@github.com/ShubhamP1028/Portfoliio.git
-                    """
-                }
+                echo '✅ Cloning the repository...'
+                checkout scm
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh "docker build -t shubham-resume ."
-            }
-        }
-
-        stage('Tag Docker Image') {
-            steps {
-                sh "docker tag shubham-resume ${IMAGE_NAME}:${IMAGE_TAG}"
+                echo '🐳 Building Docker image...'
+                sh 'docker build -t $IMAGE_NAME .'
             }
         }
 
         stage('Login to Docker Hub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: "${dockerhub-creds}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                    sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin"
-                }
+                echo '🔐 Logging into Docker Hub...'
+                sh "echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin"
             }
         }
 
         stage('Push Docker Image') {
             steps {
-                sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
+                echo '📤 Pushing Docker image to Docker Hub...'
+                sh 'docker push $IMAGE_NAME'
             }
         }
     }
 
     post {
         success {
-            echo '✅ Docker image successfully pushed to Docker Hub!'
+            echo '✅ Build and Push successful!'
         }
         failure {
             echo '❌ Build failed. Please check the logs.'
